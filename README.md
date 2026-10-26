@@ -2,16 +2,16 @@
 
 Tugas UTS Pemrograman Web. Topik mengikuti proposal **Website Kantin Kampus**.
 
-- Nama: _(isi nama)_
-- NIM: _(isi NIM)_
+- Nama: Mokhammad Fahim Imanudin
+- NIM: 25091397110
 - Kelompok: 7
 
 ## Pembagian Tugas Kelompok
 | Anggota | Bagian |
 |---|---|
-| Teman 1 | Menu & Keranjang |
-| Teman 2 | Pemesanan & Penjualan |
-| **Saya** | **Beranda, Status & Riwayat Pesanan, Login/Registrasi** |
+| Mickel | Menu & Keranjang |
+| Anto | Pemesanan & Penjualan |
+| Saya | Beranda, Status & Riwayat Pesanan, Login/Registrasi |
 
 ## Struktur Folder
 ```
