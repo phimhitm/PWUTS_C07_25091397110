@@ -1,0 +1,74 @@
+<div class="auth-wrap">
+
+  <!-- ===== FORM LOGIN ===== -->
+  <div class="form-card" id="card-login">
+    <h1>👋 Selamat datang</h1>
+    <p class="sub">Masuk untuk memesan dan memantau pesananmu.</p>
+    <div class="alert" id="alert-login" role="alert"></div>
+
+    <form id="form-login" action="php/proses_login.php" method="POST" novalidate>
+      <div class="field">
+        <label for="l-username">Username</label>
+        <input type="text" id="l-username" name="username" autocomplete="username" placeholder="mis. budi_25">
+        <div class="err"></div>
+      </div>
+      <div class="field">
+        <label for="l-password">Password</label>
+        <div class="pw-box">
+          <input type="password" id="l-password" name="password" autocomplete="current-password" placeholder="Minimal 6 karakter">
+          <button type="button" class="toggle-pw" aria-label="Tampilkan password">👁️</button>
+        </div>
+        <div class="err"></div>
+      </div>
+      <button type="submit" class="btn block">Masuk</button>
+    </form>
+    <p class="form-switch">Belum punya akun? <a data-show="register">Daftar di sini</a></p>
+  </div>
+
+  <!-- ===== FORM REGISTRASI (tabel users) ===== -->
+  <div class="form-card" id="card-register" style="display:none">
+    <h1>📝 Buat akun</h1>
+    <p class="sub">Isi data berikut untuk mendaftar.</p>
+    <div class="alert" id="alert-register" role="alert"></div>
+
+    <form id="form-register" action="php/proses_register.php" method="POST" novalidate>
+      <div class="field">
+        <label for="r-nama">Nama Lengkap</label>
+        <input type="text" id="r-nama" name="nama" maxlength="100" autocomplete="name" placeholder="mis. Budi Santoso">
+        <div class="err"></div>
+      </div>
+      <div class="field">
+        <label for="r-username">Username</label>
+        <input type="text" id="r-username" name="username" maxlength="50" autocomplete="username" placeholder="huruf, angka, underscore">
+        <div class="err"></div>
+      </div>
+      <div class="field">
+        <label for="r-role">Daftar sebagai</label>
+        <select id="r-role" name="role">
+          <option value="">-- Pilih peran --</option>
+          <option value="siswa">Mahasiswa</option>
+          <option value="admin">Admin</option>
+        </select>
+        <div class="err"></div>
+      </div>
+      <div class="field">
+        <label for="r-password">Password</label>
+        <div class="pw-box">
+          <input type="password" id="r-password" name="password" autocomplete="new-password" placeholder="Min. 8 karakter, huruf &amp; angka">
+          <button type="button" class="toggle-pw" aria-label="Tampilkan password">👁️</button>
+        </div>
+        <div class="meter"><div id="pw-meter"></div></div>
+        <span class="meter-text" id="pw-text">Kekuatan password</span>
+        <div class="err"></div>
+      </div>
+      <div class="field">
+        <label for="r-konfirmasi">Konfirmasi Password</label>
+        <input type="password" id="r-konfirmasi" name="konfirmasi" autocomplete="new-password" placeholder="Ulangi password">
+        <div class="err"></div>
+      </div>
+      <button type="submit" class="btn block">Daftar</button>
+    </form>
+    <p class="form-switch">Sudah punya akun? <a data-show="login">Masuk</a></p>
+  </div>
+
+</div>

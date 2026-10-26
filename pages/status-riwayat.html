@@ -1,0 +1,79 @@
+<div class="page-title">
+  <h1>📦 Status &amp; Riwayat Pesanan</h1>
+  <p>Pantau perkembangan pesananmu dan lihat semua transaksi sebelumnya.</p>
+</div>
+
+<div class="tabs" role="tablist">
+  <button class="tab-btn active" data-tab="tab-status" role="tab">Status Pesanan</button>
+  <button class="tab-btn" data-tab="tab-riwayat" role="tab">Riwayat Pesanan</button>
+</div>
+
+<!-- ===== TAB 1: STATUS PESANAN ===== -->
+<section id="tab-status" class="tab-panel active">
+  <div class="card">
+    <div class="order-head">
+      <h3>Pesanan <span id="st-nomor">-</span></h3>
+      <span id="st-pill" class="pill menunggu">Menunggu Diproses</span>
+    </div>
+
+    <div class="stepper" id="stepper" aria-label="Progres pesanan">
+      <div class="st" data-step="0"><div class="dot">1</div>Menunggu Diproses</div>
+      <div class="st" data-step="1"><div class="dot">2</div>Siap Diambil</div>
+      <div class="st" data-step="2"><div class="dot">3</div>Selesai</div>
+    </div>
+
+    <p id="st-pesan" style="margin:0 0 14px;color:var(--muted)"></p>
+
+    <ul class="item-list" id="st-items"></ul>
+    <div class="total-line"><span>Total</span><span id="st-total">Rp 0</span></div>
+    <small style="color:var(--muted)" id="st-waktu"></small>
+
+    <div class="sim-box">
+      <div>
+        <strong>🧪 Simulasi tindakan admin</strong><br>
+        <small>Pada sistem nyata, admin yang mengubah status di database.</small>
+      </div>
+      <div style="display:flex;gap:8px;flex-wrap:wrap">
+        <button class="btn small" id="btn-next">Naikkan Status ➜</button>
+        <button class="btn small ghost" id="btn-auto">▶ Auto</button>
+        <button class="btn small ghost" id="btn-reset">↺ Reset</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== TAB 2: RIWAYAT PESANAN ===== -->
+<section id="tab-riwayat" class="tab-panel">
+  <div class="summary">
+    <div class="card"><strong id="sum-jumlah">0</strong><span>Jumlah pesanan</span></div>
+    <div class="card"><strong id="sum-total">Rp 0</strong><span>Total belanja (hasil filter)</span></div>
+    <div class="card"><strong id="sum-selesai">0</strong><span>Pesanan selesai</span></div>
+  </div>
+
+  <div class="toolbar">
+    <input type="search" id="cari-pesanan" placeholder="🔎 Cari nomor pesanan / nama menu…" aria-label="Cari pesanan">
+    <select id="filter-status" aria-label="Filter status">
+      <option value="">Semua status</option>
+      <option>Menunggu Diproses</option>
+      <option>Siap Diambil</option>
+      <option>Selesai</option>
+    </select>
+  </div>
+
+  <div class="card" style="padding:6px">
+    <table id="tabel-riwayat">
+      <thead>
+        <tr>
+          <th data-sort="id">No. Pesanan</th>
+          <th data-sort="tanggal">Tanggal</th>
+          <th data-sort="jumlahItem">Item</th>
+          <th data-sort="total">Total</th>
+          <th data-sort="status">Status</th>
+          <th>Detail</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+    <div class="empty" id="riwayat-kosong" style="display:none">Tidak ada pesanan yang cocok 🔍</div>
+  </div>
+</section>

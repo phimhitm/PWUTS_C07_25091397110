@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Kantin Kampus – Beranda</title>
+  <meta name="description" content="Website Kantin Kampus: lihat menu, pesan, dan pantau status pesananmu.">
+  <link rel="icon" href="images/logo.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- ========== HEADER + NAVIGASI ========== -->
+<header class="site-header">
+  <div class="container nav-wrap">
+    <a href="index.html" class="brand" data-page="beranda">
+      <img src="images/logo.svg" alt="Logo Kantin Kampus"> Kantin <span>Kampus</span>
+    </a>
+    <button class="nav-toggle" id="navToggle" aria-label="Buka menu navigasi" aria-expanded="false">&#9776;</button>
+    <nav class="main-nav" id="mainNav" aria-label="Navigasi utama">
+      <ul>
+        <li><a href="index.html" data-page="beranda" class="active">Beranda</a></li>
+        <!-- Link di bawah dimuat dengan teknik AJAX (jQuery .load) ke dalam #content -->
+        <li><a href="pages/status-riwayat.html" data-page="status">Status &amp; Riwayat</a></li>
+        <li><a href="pages/login.html" data-page="login">Login / Daftar</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<!-- ========== AREA KONTEN (diganti lewat AJAX) ========== -->
+<main id="content" class="container">
+
+  <!-- Konten default = BERANDA -->
+  <section class="hero fade-in">
+    <div>
+      <span class="badge">🍽️ Kantin online untuk mahasiswa</span>
+      <h1>Lapar? Cek menu &amp; pantau pesananmu <em>tanpa antre.</em></h1>
+      <p>Lihat makanan dan minuman yang tersedia di kantin kampus, pesan dari mana saja, lalu pantau status pesananmu secara langsung.</p>
+      <div class="hero-actions">
+        <a class="btn" href="pages/status-riwayat.html" data-page="status">Lihat Status Pesanan</a>
+        <a class="btn ghost" href="pages/login.html" data-page="login">Login / Daftar</a>
+      </div>
+    </div>
+    <div class="hero-img">
+      <img src="images/hero.svg" alt="Ilustrasi semangkuk makanan hangat dari kantin kampus">
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>Kategori Menu</h2>
+    <p class="sub">Pilih sesuai selera dan suasana perutmu.</p>
+    <div class="grid cols-4">
+      <div class="card cat"><div class="ico">🍛</div><h3>Makanan Berat</h3><p>Nasi, mie, dan lauk</p></div>
+      <div class="card cat"><div class="ico">🍟</div><h3>Camilan</h3><p>Gorengan &amp; snack</p></div>
+      <div class="card cat"><div class="ico">🧋</div><h3>Minuman Dingin</h3><p>Es teh, jus, boba</p></div>
+      <div class="card cat"><div class="ico">☕</div><h3>Minuman Panas</h3><p>Kopi, teh, cokelat</p></div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>Menu Populer</h2>
+    <p class="sub">Favorit mahasiswa minggu ini.</p>
+    <div class="grid cols-3">
+      <article class="card food">
+        <div class="thumb" style="background:#fff3bf">🍳</div>
+        <h3>Nasi Goreng Spesial</h3><div class="meta">Makanan Berat • Stan 1</div><div class="price">Rp 15.000</div>
+      </article>
+      <article class="card food">
+        <div class="thumb" style="background:#ffe3e3">🍜</div>
+        <h3>Mie Ayam Bakso</h3><div class="meta">Makanan Berat • Stan 2</div><div class="price">Rp 13.000</div>
+      </article>
+      <article class="card food">
+        <div class="thumb" style="background:#d0ebff">🧋</div>
+        <h3>Es Teh Manis</h3><div class="meta">Minuman Dingin • Stan 3</div><div class="price">Rp 4.000</div>
+      </article>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>Cara Memesan</h2>
+    <p class="sub">Empat langkah mudah dari layar ke piring.</p>
+    <div class="grid cols-4">
+      <div class="card step"><div class="num">1</div><h3>Login</h3><p>Masuk dengan akun mahasiswa.</p></div>
+      <div class="card step"><div class="num">2</div><h3>Pilih Menu</h3><p>Masukkan ke keranjang.</p></div>
+      <div class="card step"><div class="num">3</div><h3>Checkout</h3><p>Pesananmu dikirim ke penjual.</p></div>
+      <div class="card step"><div class="num">4</div><h3>Pantau Status</h3><p>Menunggu → Siap diambil → Selesai.</p></div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="card stats">
+      <div><strong id="statCount1">0</strong><span>Menu tersedia</span></div>
+      <div><strong id="statCount2">0</strong><span>Stan penjual</span></div>
+      <div><strong id="statCount3">0</strong><span>Pesanan selesai</span></div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <p>&copy; 2026 Kantin Kampus – Kelompok 7 • Tugas UTS Pemrograman Web</p>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script src="js/main.js"></script>
+<script src="js/status.js"></script>
+<script src="js/auth.js"></script>
+</body>
+</html>
